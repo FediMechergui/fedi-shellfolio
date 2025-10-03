@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, Globe, Code2, Cloud, Shield, BrainCircuit, Cpu, Palette, Smartphone, Award } from "lucide-react";
 
 interface SkillCategory {
   name: string;
   skills: string[];
-  icon: string;
+  icon: React.ReactNode;
 }
 
 const skillCategories: SkillCategory[] = [
   {
     name: "Core Web & Backend",
-    icon: "🌐",
+    icon: <Globe className="w-5 h-5 text-primary" />,
     skills: [
       "JavaScript",
       "React",
@@ -33,12 +33,12 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Programming Languages",
-    icon: "💻",
+    icon: <Code2 className="w-5 h-5 text-primary" />,
     skills: ["Java", "C", "C++", "C#", "Python", "JavaScript", "Embedded C"],
   },
   {
     name: "DevOps & Cloud",
-    icon: "☁️",
+    icon: <Cloud className="w-5 h-5 text-primary" />,
     skills: [
       "Docker",
       "Nginx",
@@ -53,7 +53,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Security & Tools",
-    icon: "🔒",
+    icon: <Shield className="w-5 h-5 text-primary" />,
     skills: [
       "SonarQube",
       "OWASP ZAP",
@@ -67,12 +67,12 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "AI & Data Science",
-    icon: "🤖",
+    icon: <BrainCircuit className="w-5 h-5 text-primary" />,
     skills: ["TensorFlow", "PyTorch", "Jupyter", "Ollama", "AI APIs"],
   },
   {
     name: "IoT & Embedded",
-    icon: "📡",
+    icon: <Cpu className="w-5 h-5 text-primary" />,
     skills: [
       "Arduino IDE",
       "ESP32",
@@ -83,17 +83,17 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Frontend Frameworks",
-    icon: "🎨",
+    icon: <Palette className="w-5 h-5 text-primary" />,
     skills: ["ReactJS", "NextJS", "Redux", "TailwindCSS", "Webpack"],
   },
   {
     name: "Mobile Development",
-    icon: "📱",
+    icon: <Smartphone className="w-5 h-5 text-primary" />,
     skills: ["Android Studio", "Kotlin", "Java", "Flutter"],
   },
   {
     name: "Certifications",
-    icon: "🏆",
+    icon: <Award className="w-5 h-5 text-primary" />,
     skills: [
       "CISCO CCNA 1",
       "System Design Level 2",
@@ -130,7 +130,7 @@ export const SkillsSection = () => {
             ) : (
               <ChevronRight className="w-4 h-4 text-secondary" />
             )}
-            <span className="text-lg">{category.icon}</span>
+            {category.icon}
             <span className="font-semibold text-foreground">
               {category.name}
             </span>
