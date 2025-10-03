@@ -138,8 +138,7 @@ const projects: Project[] = [
     tech: ["ReactJS", "Excel/CSV Export", "Data Visualization", "PowerBI"],
     description:
       "A ReactJS based interface for uploading files and financial opportunities, assigning them to company members. Features Excel/CSV export capabilities and multiple chart visualizations inspired by PowerBI.",
-    status: "live",
-    link: "https://github.com/FediMechergui",
+    status: "private",
   },
   {
     title: "Doctor Appointment System",
@@ -147,8 +146,7 @@ const projects: Project[] = [
     tech: ["MongoDB", "Express", "React", "Node.js", "MERN Stack"],
     description:
       "Appointment management system with patient and appointment CRUD operations. Developed as License Final Project (PFE) demonstrating full-stack capabilities.",
-    status: "completed",
-    link: "https://github.com/FediMechergui",
+    status: "private",
   },
 ];
 
