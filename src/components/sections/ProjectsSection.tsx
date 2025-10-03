@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Lock, Github } from "lucide-react";
+import { ExternalLink, Lock, Github, Database, Code2, Cloud, Shield, MessageSquare, Smartphone, Image, BrainCircuit, Palette, Key, Network, Globe } from "lucide-react";
 
 interface Project {
   title: string;
@@ -12,7 +12,108 @@ interface Project {
   link?: string;
 }
 
+const getTechIcon = (tech: string) => {
+  const techLower = tech.toLowerCase();
+  if (techLower.includes("react") || techLower.includes("node") || techLower.includes("express") || techLower.includes("nest") || techLower.includes(".net") || techLower.includes("spring") || techLower.includes("flutter") || techLower.includes("django") || techLower.includes("flask")) return <Code2 className="w-3 h-3" />;
+  if (techLower.includes("mongodb") || techLower.includes("mysql") || techLower.includes("sql") || techLower.includes("firebase") || techLower.includes("redis")) return <Database className="w-3 h-3" />;
+  if (techLower.includes("docker") || techLower.includes("azure") || techLower.includes("vercel")) return <Cloud className="w-3 h-3" />;
+  if (techLower.includes("security") || techLower.includes("devsecops") || techLower.includes("firewall") || techLower.includes("encryption") || techLower.includes("rsa") || techLower.includes("aes")) return <Shield className="w-3 h-3" />;
+  if (techLower.includes("websocket") || techLower.includes("chat") || techLower.includes("realtime")) return <MessageSquare className="w-3 h-3" />;
+  if (techLower.includes("mobile") || techLower.includes("android")) return <Smartphone className="w-3 h-3" />;
+  if (techLower.includes("pytorch") || techLower.includes("opencv") || techLower.includes("ocr") || techLower.includes("image")) return <Image className="w-3 h-3" />;
+  if (techLower.includes("ai") || techLower.includes("mern")) return <BrainCircuit className="w-3 h-3" />;
+  if (techLower.includes("art") || techLower.includes("gallery")) return <Palette className="w-3 h-3" />;
+  if (techLower.includes("e2e") || techLower.includes("crypto")) return <Key className="w-3 h-3" />;
+  if (techLower.includes("network") || techLower.includes("linux")) return <Network className="w-3 h-3" />;
+  if (techLower.includes("web") || techLower.includes("landing")) return <Globe className="w-3 h-3" />;
+  return <Code2 className="w-3 h-3" />;
+};
+
 const projects: Project[] = [
+  {
+    title: "Fondation Bien-Être",
+    period: "2025",
+    tech: ["ReactJS", "TailwindCSS", "Web Design"],
+    description:
+      "A modern, responsive website for Fondation Bien-Être, a wellness and healthcare foundation. Features elegant design, smooth animations, and comprehensive information architecture.",
+    status: "live",
+    link: "https://fondation-bien-etre-theta.vercel.app",
+  },
+  {
+    title: "Manel's Metal Sanctuary",
+    period: "2025",
+    tech: ["ReactJS", "Music Player", "Interactive UI"],
+    description:
+      "A personalized music sanctuary featuring a beautiful, interactive interface for exploring metal music. Built as a special gift with custom playlists and mood-based navigation.",
+    status: "live",
+    link: "https://mood-metal-mindscape.vercel.app",
+  },
+  {
+    title: "FWA Launchpad",
+    period: "2025",
+    tech: ["ReactJS", "Landing Page", "Web Design"],
+    description:
+      "Modern landing page for FWA startup, showcasing services and products with clean design and engaging user experience.",
+    status: "live",
+    link: "https://fwa-launchpad.vercel.app",
+  },
+  {
+    title: "Omnilink Website",
+    period: "2025",
+    tech: ["ReactJS", "Corporate Site", "Web Design"],
+    description:
+      "Professional corporate website for Omnilink, featuring company information, services, and contact capabilities.",
+    status: "live",
+    link: "https://omnilink-website-try.vercel.app",
+  },
+  {
+    title: "AI Powered Smart Firewall",
+    period: "06/2025 - 07/2025",
+    tech: ["Docker", "Linux", "AI", "Cybersecurity", "Network Security"],
+    description:
+      "Docker-based Linux Firewall with AI model for threat analysis. Currently in development with ready MVP that predicts, analyzes and prevents network threats using trained dataset of latest cybersecurity threats. Features web interface for visualization and preventive actions.",
+    status: "private",
+  },
+  {
+    title: "SmartHire - AI Hiring Platform",
+    period: "06/2025 - 07/2025",
+    tech: ["MongoDB", "Express", "React", "Node.js", "AI", "MERN Stack"],
+    description:
+      "MERN Stack hiring platform powered by AI. Features tailored job offers for candidates based on profile analysis, and AI-powered candidate ranking for HRs based on profiles and CVs.",
+    status: "private",
+  },
+  {
+    title: "STEG Lockout Note Mobile App",
+    period: "04/2025 - 06/2025",
+    tech: ["Flutter", "SpringBoot", "SQL Server", "Mobile"],
+    description:
+      "Mobile app for STEG to track lockout notes for electric failures. Features role-based access control, real-time communication, and security measures for smooth workflow between personnel.",
+    status: "private",
+  },
+  {
+    title: "AmalAPI - Image Recognition API",
+    period: "05/2025 - 05/2025",
+    tech: ["PyTorch", "OpenCV", "OCR", "Image Recognition"],
+    description:
+      "Free DIY API for image recognition utilizing PyTorch and OpenCV for OCR and basic image recognition. Provides accessible interface for image processing tasks.",
+    status: "private",
+  },
+  {
+    title: "Secure Messaging - E2E Encryption",
+    period: "04/2025 - 04/2025",
+    tech: ["WebSockets", "E2E Encryption", "RSA", "AES", "Realtime Chat"],
+    description:
+      "Practice project for WebSockets and end-to-end encryption. Features real-time chat communications with message encryption/decryption using RSA, AES algorithms. Users can view both encrypted and plain text versions.",
+    status: "private",
+  },
+  {
+    title: "ArtGallery - .NET Fullstack",
+    period: "03/2025 - 04/2025",
+    tech: [".NET", "C#", "SQL Server", "Web"],
+    description:
+      "Simple fullstack online art exhibition project built with .NET and SQL Server to explore and test new technology stack.",
+    status: "private",
+  },
   {
     title: "Omnilink CI/CD Backend Infrastructure",
     period: "03/2025 - 10/2025",
@@ -127,8 +228,9 @@ export const ProjectsSection = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-xs text-primary"
+                      className="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-xs text-primary flex items-center gap-1"
                     >
+                      {getTechIcon(tech)}
                       {tech}
                     </span>
                   ))}
