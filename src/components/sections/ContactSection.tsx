@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Github,
@@ -63,23 +64,64 @@ export const ContactSection = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">(
-    "idle"
-  );
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // EmailJS configuration
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        console.warn(
+          "EmailJS not configured. Add your credentials to .env file."
+        );
+        // Fallback to simulation for development
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setSubmitStatus("success");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          setTimeout(() => setSubmitStatus("idle"), 3000);
+        }, 1500);
+        return;
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Fedi Mechergui",
+        },
+        publicKey
+      );
+
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
 
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus("idle"), 3000);
-    }, 1500);
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitStatus("error");
+
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -93,9 +135,7 @@ export const ContactSection = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-primary mb-4">
-        📬 Get In Touch
-      </h2>
+      <h2 className="text-xl font-bold text-primary mb-4">📬 Get In Touch</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Contact Links */}
@@ -133,9 +173,7 @@ export const ContactSection = () => {
           </h3>
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
-              <label className="text-sm text-foreground block mb-1">
-                Name
-              </label>
+              <label className="text-sm text-foreground block mb-1">Name</label>
               <input
                 type="text"
                 name="name"
@@ -210,6 +248,13 @@ export const ContactSection = () => {
             {submitStatus === "success" && (
               <div className="p-3 bg-primary/10 border border-primary rounded text-sm text-primary animate-fade-in">
                 ✅ Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="p-3 bg-red-500/10 border border-red-500 rounded text-sm text-red-500 animate-fade-in">
+                ❌ Failed to send message. Please try again or contact me
+                directly via email.
               </div>
             )}
           </form>
