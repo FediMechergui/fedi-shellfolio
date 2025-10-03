@@ -95,6 +95,7 @@ Type 'help' to see available commands.`,
       ...prev,
       { type: result.type, content: result.content, timestamp: new Date() },
     ]);
+    result.action?.();
   };
 
   if (isBooting) {

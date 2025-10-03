@@ -4,10 +4,13 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { saveAs } from "file-saver";
+import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251003 (1).pdf";
 
 interface CommandResult {
   type: "output" | "error";
   content: string | React.ReactNode;
+  action?: () => void;
 }
 
 export const handleCommand = (input: string): CommandResult => {
@@ -77,9 +80,8 @@ Easter eggs:
     case "resume":
       return {
         type: "output",
-        content: `Downloading resume...
-Note: Resume download feature coming soon!
-For now, please use the contact form to request my CV.`,
+        content: `Resume download initiated! If the download doesn't start automatically, please try again or reach out via the contact form.`,
+        action: () => saveAs(resumePdf, "Fedi-Mechergui-Resume.pdf"),
       };
 
     case "coffee":
