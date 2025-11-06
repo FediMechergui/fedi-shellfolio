@@ -31,6 +31,49 @@ const getTechIcon = (tech: string) => {
 
 const projects: Project[] = [
   {
+    title: "Douaa Zammit - IoT & Embedded Systems Portfolio",
+    period: "2025",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "EmailJS",
+      "shadcn/ui",
+    ],
+    description:
+      "Interactive portfolio for IoT engineer with circuit-board aesthetic and dynamic mood-based theming. Features 5 customizable theme presets, bilingual support (EN/FR), animated particle background with neon effects, project showcase of IoT/embedded systems work, and EmailJS-powered contact form with custom circuit-themed email templates. Includes professional experience at Tunisie Télécom and IEEE WIE leadership.",
+    status: "live",
+    link: "https://circuit-douaa-unfold.vercel.app",
+  },
+  {
+    title: "MS Consulting – Docteur Projet",
+    period: "2025",
+    tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Router"],
+    description:
+      "Business consulting platform for Tunisian entrepreneurs, micro-enterprises and self-employed professionals. Features comprehensive financial advisory services, pricing plans, interactive cost calculator for business registration and taxes, client testimonials, and detailed FAQ. Includes market insights for the Tunisian entrepreneurial ecosystem with statistics and legal guidance.",
+    status: "live",
+    link: "https://conseil-futur-tpe.vercel.app",
+  },
+  {
+    title: "GeoChic - Géomatique & Formation Tunisie",
+    period: "2025",
+    tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Vite"],
+    description:
+      "Professional website for GeoChic, a Tunisian geomatics consulting and training agency. Features comprehensive GIS services showcase, training catalog, team profiles, and contact forms. Includes modern responsive design with light/dark mode, SEO optimization, and smooth animations for enhanced user experience.",
+    status: "live",
+    link: "https://geo-wala-chic.vercel.app",
+  },
+  {
+    title: "Mood Map Cinema",
+    period: "2025",
+    tech: ["ReactJS", "IMDB API", "Dynamic UI", "Day/Night Cycle"],
+    description:
+      "Interactive movie recommendation platform that adapts its interface based on day/night cycle. Users input their preferences and mood, and the app suggests personalized movie recommendations from IMDB's extensive database.",
+    status: "live",
+    link: "https://mood-map-cinema.vercel.app",
+  },
+  {
     title: "Fondation Bien-Être",
     period: "2025",
     tech: ["ReactJS", "TailwindCSS", "Web Design"],

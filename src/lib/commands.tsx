@@ -6,6 +6,7 @@ import { EducationSection } from "@/components/sections/EducationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { saveAs } from "file-saver";
 import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251003 (1).pdf";
+import meBtwImage from "@/assets/mebtw.png";
 
 interface CommandResult {
   type: "output" | "error";
@@ -38,7 +39,11 @@ export const handleCommand = (input: string): CommandResult => {
 Easter eggs:
   coffee     - ☕
   matrix     - Enter the matrix
-  hack       - Hacker mode activated`,
+  hack       - Hacker mode activated
+  surprise   - 🎁 Something special...
+  dance      - 💃 Let's dance!
+  quote      - 💭 Random dev quote
+  more       - 🔍 Want to know more?`,
       };
 
     case "about":
@@ -149,6 +154,97 @@ Just kidding! I'm a developer, not a hacker 😄
       return {
         type: "output",
         content: "/home/fedi/portfolio",
+      };
+
+    case "surprise":
+      return {
+        type: "output",
+        content: `🎁 Surprise! Opening something special...
+Get ready for an epic experience! 🚀`,
+        action: () => window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1", "_blank"),
+      };
+
+    case "dance":
+      return {
+        type: "output",
+        content: `
+    💃    🕺    💃    🕺
+      ♪┏(･o･)┛♪
+    🕺    💃    🕺    💃
+    
+"When your code compiles on the first try!"
+Time to celebrate! 🎉`,
+      };
+
+    case "quote": {
+      const quotes = [
+        '"Talk is cheap. Show me the code." - Linus Torvalds',
+        '"First, solve the problem. Then, write the code." - John Johnson',
+        '"Code is like humor. When you have to explain it, it\'s bad." - Cory House',
+        '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler',
+        '"Experience is the name everyone gives to their mistakes." - Oscar Wilde',
+        '"The best error message is the one that never shows up." - Thomas Fuchs',
+        '"Simplicity is the soul of efficiency." - Austin Freeman',
+        '"Make it work, make it right, make it fast." - Kent Beck',
+      ];
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      return {
+        type: "output",
+        content: `💭 ${randomQuote}`,
+      };
+    }
+
+    case "fortune":
+      return {
+        type: "output",
+        content: `🔮 Your fortune: "You will soon encounter a challenging bug...
+but you will solve it with coffee and determination!" ☕`,
+      };
+
+    case "joke":
+      return {
+        type: "output",
+        content: `😄 Why do programmers prefer dark mode?
+
+Because light attracts bugs! 🐛`,
+      };
+
+    case "ping":
+      return {
+        type: "output",
+        content: `PING fedi.portfolio (127.0.0.1): 56 data bytes
+64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.042 ms
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.037 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.035 ms
+
+--- fedi.portfolio ping statistics ---
+3 packets transmitted, 3 packets received, 0.0% packet loss
+Portfolio is online! ✅`,
+      };
+
+    case "more":
+      return {
+        type: "output",
+        content: (
+          <div className="space-y-3">
+            <img 
+              src={meBtwImage} 
+              alt="This is me btw" 
+              className="max-w-sm w-full rounded-lg border-2 border-primary shadow-lg"
+            />
+            <p className="text-foreground text-sm italic">
+              This is me btw. Nothing more. Try other sections to find something useful. 😎
+            </p>
+          </div>
+        ),
+      };
+
+    case "exit":
+    case "quit":
+      return {
+        type: "output",
+        content: `You can't leave me that easily! 😄
+Try 'clear' to start fresh, or just keep exploring! 🚀`,
       };
 
     default:
