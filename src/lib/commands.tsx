@@ -7,6 +7,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { saveAs } from "file-saver";
 import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251003 (1).pdf";
 import meBtwImage from "@/assets/mebtw.png";
+import { trackResumeDownload, trackEasterEgg } from "./analytics";
 
 interface CommandResult {
   type: "output" | "error";
@@ -86,10 +87,14 @@ Easter eggs:
       return {
         type: "output",
         content: `Resume download initiated! If the download doesn't start automatically, please try again or reach out via the contact form.`,
-        action: () => saveAs(resumePdf, "Fedi-Mechergui-Resume.pdf"),
+        action: () => {
+          trackResumeDownload();
+          saveAs(resumePdf, "Fedi-Mechergui-Resume.pdf");
+        },
       };
 
     case "coffee":
+      trackEasterEgg("coffee");
       return {
         type: "output",
         content: `
@@ -108,6 +113,7 @@ Easter eggs:
       };
 
     case "matrix":
+      trackEasterEgg("matrix");
       return {
         type: "output",
         content: `Wake up, Neo...
@@ -120,6 +126,7 @@ Type 'clear' to exit the matrix.`,
       };
 
     case "hack":
+      trackEasterEgg("hack");
       return {
         type: "output",
         content: `[INITIALIZING HACKING SEQUENCE]
@@ -157,14 +164,20 @@ Just kidding! I'm a developer, not a hacker 😄
       };
 
     case "surprise":
+      trackEasterEgg("surprise");
       return {
         type: "output",
         content: `🎁 Surprise! Opening something special...
 Get ready for an epic experience! 🚀`,
-        action: () => window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1", "_blank"),
+        action: () =>
+          window.open(
+            "https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1",
+            "_blank"
+          ),
       };
 
     case "dance":
+      trackEasterEgg("dance");
       return {
         type: "output",
         content: `
@@ -223,17 +236,19 @@ Portfolio is online! ✅`,
       };
 
     case "more":
+      trackEasterEgg("more");
       return {
         type: "output",
         content: (
           <div className="space-y-3">
-            <img 
-              src={meBtwImage} 
-              alt="This is me btw" 
+            <img
+              src={meBtwImage}
+              alt="This is me btw"
               className="max-w-sm w-full rounded-lg border-2 border-primary shadow-lg"
             />
             <p className="text-foreground text-sm italic">
-              This is me btw. Nothing more. Try other sections to find something useful. 😎
+              This is me btw. Nothing more. Try other sections to find something
+              useful. 😎
             </p>
           </div>
         ),

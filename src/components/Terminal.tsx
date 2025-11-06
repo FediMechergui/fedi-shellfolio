@@ -3,6 +3,13 @@ import { TerminalInput } from "./TerminalInput";
 import { TerminalOutput } from "./TerminalOutput";
 import { BootSequence } from "./BootSequence";
 import { handleCommand } from "@/lib/commands";
+import {
+  trackCommand,
+  trackPageView,
+  trackSessionStart,
+  trackSessionEnd,
+  trackTimeOnPage,
+} from "@/lib/analytics";
 
 export interface OutputLine {
   type: "command" | "output" | "error";
@@ -34,9 +41,42 @@ Type 'help' to see available commands.`,
           timestamp: new Date(),
         },
       ]);
+      // Track initial page view
+      trackPageView("/");
     }, 3000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Track session start, end, and time on page
+  useEffect(() => {
+    const startTime = Date.now();
+    let timeSpent = 0;
+
+    // Track session start
+    trackSessionStart();
+
+    // Track time on page every 30 seconds
+    const timeInterval = setInterval(() => {
+      timeSpent += 30;
+      trackTimeOnPage(timeSpent);
+    }, 30000); // Every 30 seconds
+
+    // Track session end on page unload
+    const handleBeforeUnload = () => {
+      const duration = Date.now() - startTime;
+      trackSessionEnd(duration);
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      clearInterval(timeInterval);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      // Also track session end when component unmounts
+      const duration = Date.now() - startTime;
+      trackSessionEnd(duration);
+    };
   }, []);
 
   useEffect(() => {
@@ -95,6 +135,10 @@ Type 'help' to see available commands.`,
       ...prev,
       { type: result.type, content: result.content, timestamp: new Date() },
     ]);
+
+    // Track command execution
+    trackCommand(trimmedInput);
+
     result.action?.();
   };
 

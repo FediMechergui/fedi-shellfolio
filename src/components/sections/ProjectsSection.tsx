@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ExternalLink, Lock, Github, Database, Code2, Cloud, Shield, MessageSquare, Smartphone, Image, BrainCircuit, Palette, Key, Network, Globe } from "lucide-react";
+import { trackProjectClick, trackProjectExpand } from "@/lib/analytics";
 
 interface Project {
   title: string;
@@ -222,9 +223,13 @@ export const ProjectsSection = () => {
         >
           <div
             className="p-4 cursor-pointer hover:bg-muted/30"
-            onClick={() =>
-              setExpandedProject(expandedProject === index ? null : index)
-            }
+            onClick={() => {
+              const newIndex = expandedProject === index ? null : index;
+              setExpandedProject(newIndex);
+              if (newIndex === index) {
+                trackProjectExpand(project.title);
+              }
+            }}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
@@ -282,6 +287,7 @@ export const ProjectsSection = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackProjectClick(project.title, project.link!)}
                     className="inline-flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
                   >
                     {project.status === "live" ? (

@@ -10,6 +10,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import { trackContactFormSubmit, trackSocialClick } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -111,11 +112,17 @@ export const ContactSection = () => {
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
 
+      // Track successful form submission
+      trackContactFormSubmit(true);
+
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus("error");
+
+      // Track failed form submission
+      trackContactFormSubmit(false);
 
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
@@ -149,6 +156,7 @@ export const ContactSection = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackSocialClick(social.name, social.link)}
               className="flex items-center gap-3 p-3 border border-border rounded hover:border-primary hover:bg-primary/5 transition-all group"
             >
               <div className="text-primary group-hover:text-secondary transition-colors">
