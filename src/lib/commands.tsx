@@ -254,6 +254,42 @@ Portfolio is online! ✅`,
         ),
       };
 
+    case "raghed":
+      trackEasterEgg("raghed");
+      return {
+        type: "output",
+        content: (
+          <div className="space-y-4 my-4">
+            <div className="text-center">
+              <div className="text-4xl mb-2 animate-pulse">💌</div>
+              <h3 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent animate-gradient">
+                A Message for Raghed
+              </h3>
+            </div>
+            <div className="border-l-4 border-primary pl-4 py-2 bg-gradient-to-r from-primary/5 to-transparent">
+              <p className="text-foreground leading-relaxed mb-3">
+                <span className="text-primary font-semibold">Hey,</span> I just wanna say thanks for being a good experience. 
+                You're the best ex I got — not the most evil or someone I wronged, you're just the most 
+                experience that taught me more.
+              </p>
+              <p className="text-foreground leading-relaxed mb-3">
+                In case you're wondering, I don't have feelings anymore, and I hope both of us end up 
+                with someone better in the future.
+              </p>
+              <p className="text-foreground leading-relaxed mb-3">
+                I wish you all the best despite everything, whether we talked or didn't...
+              </p>
+              <p className="text-secondary font-semibold text-lg mt-4">
+                Stay cool, stay safe, and stay happy. ✨
+              </p>
+            </div>
+            <div className="text-center text-xs text-muted-foreground italic">
+              — Fedi
+            </div>
+          </div>
+        ),
+      };
+
     case "exit":
     case "quit":
       return {
