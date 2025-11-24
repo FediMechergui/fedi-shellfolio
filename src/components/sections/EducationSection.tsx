@@ -29,7 +29,7 @@ const education: Education[] = [
   {
     degree: "Bachelor Degree in Experimental Sciences",
     institution: "Ali Douaji Marsa Saada Highschool",
-    period: "2020",
+    period: "07/2020",
     location: "La Marsa, Tunisia",
   },
 ];

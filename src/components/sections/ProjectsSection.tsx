@@ -32,6 +32,21 @@ const getTechIcon = (tech: string) => {
 
 const projects: Project[] = [
   {
+    title: "Quantum Banking System with Spec-Driven Development",
+    period: "2025",
+    tech: [
+      "Qiskit",
+      "TypeScript",
+      "Node.js",
+      "Spec-Driven Dev",
+      "Prompt Engineering",
+    ],
+    description:
+      "Experimental banking core that pairs quantum algorithms with classical services. Built using a prompt/spec workflow that keeps quantum circuit design, orchestration layers, and classical APIs in sync so complex flows can be iterated like regular software features.",
+    status: "completed",
+    link: "https://github.com/FediMechergui/quantum_bank",
+  },
+  {
     title: "Douaa Zammit - IoT & Embedded Systems Portfolio",
     period: "2025",
     tech: [

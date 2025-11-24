@@ -11,6 +11,18 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    title: "Head of Web Development Department",
+    company: "Medtour",
+    period: "11/2025 - Present",
+    location: "Tunis, Tunisia",
+    current: true,
+    description: [
+      "Own all web development roadmaps for Medtour's travel products",
+      "Coordinate cross-team delivery for every digital project and task",
+      "Build standards that keep design, frontend, and backend squads aligned",
+    ],
+  },
+  {
     title: "Lead Developer / SCRUM Master",
     company: "Omnilink",
     period: "07/2024 - Present",

@@ -5,7 +5,7 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { saveAs } from "file-saver";
-import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251003 (1).pdf";
+import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251124 (1).pdf";
 import meBtwImage from "@/assets/mebtw.png";
 import { trackResumeDownload, trackEasterEgg } from "./analytics";
 
