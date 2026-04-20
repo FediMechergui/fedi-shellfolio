@@ -25,9 +25,8 @@ const experiences: Experience[] = [
   {
     title: "Lead Developer / SCRUM Master",
     company: "Omnilink",
-    period: "07/2024 - Present",
+    period: "07/2024 - 10/2025",
     location: "Ariana, Tunisia",
-    current: true,
     description: [
       "System Designer & Backend Developer for core products",
       "Mentored 10+ interns across various projects",

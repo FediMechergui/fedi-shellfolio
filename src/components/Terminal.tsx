@@ -177,17 +177,23 @@ Type 'help' to see available commands.`,
 
         {/* Quick Command Buttons (Mobile Friendly) */}
         <div className="mt-4 flex flex-wrap gap-2 justify-center">
-          {["help", "about", "skills", "projects", "experience", "contact"].map(
-            (cmd) => (
-              <button
-                key={cmd}
-                onClick={() => executeCommand(cmd)}
-                className="px-3 py-1 text-sm bg-muted hover:bg-primary hover:text-primary-foreground transition-colors rounded border border-border"
-              >
-                {cmd}
-              </button>
-            )
-          )}
+          {[
+            "help",
+            "about",
+            "skills",
+            "projects",
+            "experience",
+            "education",
+            "contact",
+          ].map((cmd) => (
+            <button
+              key={cmd}
+              onClick={() => executeCommand(cmd)}
+              className="px-3 py-1 text-sm bg-muted hover:bg-primary hover:text-primary-foreground transition-colors rounded border border-border"
+            >
+              {cmd}
+            </button>
+          ))}
         </div>
       </div>
     </div>

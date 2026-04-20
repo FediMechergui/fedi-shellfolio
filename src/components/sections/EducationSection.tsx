@@ -50,6 +50,11 @@ const certificates: Certificate[] = [
     level: "C2",
     icon: "🇬🇧",
   },
+  {
+    name: "Advent of Cyber 2025",
+    level: "TryHackMe",
+    icon: "🎄",
+  },
 ];
 
 export const EducationSection = () => {
