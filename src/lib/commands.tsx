@@ -7,7 +7,12 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { saveAs } from "file-saver";
 import resumePdf from "@/assets/Fedi-Mechergui-FlowCV-Resume-20251124 (1).pdf";
 import meBtwImage from "@/assets/mebtw.png";
-import { trackResumeDownload, trackEasterEgg } from "./analytics";
+import {
+  trackResumeDownload,
+  trackEasterEgg,
+  trackSectionView,
+  trackUnknownCommand,
+} from "./analytics";
 
 interface CommandResult {
   type: "output" | "error";
@@ -51,36 +56,42 @@ Easter eggs:
       return {
         type: "output",
         content: <AboutSection />,
+        action: () => trackSectionView("about"),
       };
 
     case "skills":
       return {
         type: "output",
         content: <SkillsSection />,
+        action: () => trackSectionView("skills"),
       };
 
     case "projects":
       return {
         type: "output",
         content: <ProjectsSection />,
+        action: () => trackSectionView("projects"),
       };
 
     case "experience":
       return {
         type: "output",
         content: <ExperienceSection />,
+        action: () => trackSectionView("experience"),
       };
 
     case "education":
       return {
         type: "output",
         content: <EducationSection />,
+        action: () => trackSectionView("education"),
       };
 
     case "contact":
       return {
         type: "output",
         content: <ContactSection />,
+        action: () => trackSectionView("contact"),
       };
 
     case "resume":
@@ -172,7 +183,7 @@ Get ready for an epic experience! 🚀`,
         action: () =>
           window.open(
             "https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1",
-            "_blank"
+            "_blank",
           ),
       };
 
@@ -268,16 +279,18 @@ Portfolio is online! ✅`,
             </div>
             <div className="border-l-4 border-primary pl-4 py-2 bg-gradient-to-r from-primary/5 to-transparent">
               <p className="text-foreground leading-relaxed mb-3">
-                <span className="text-primary font-semibold">Hey,</span> I just wanna say thanks for being a good experience. 
-                You're the best ex I got — not the most evil or someone I wronged, you're just the most 
-                experience that taught me more.
+                <span className="text-primary font-semibold">Hey,</span> I just
+                wanna say thanks for being a good experience. You're the best ex
+                I got — not the most evil or someone I wronged, you're just the
+                most experience that taught me more.
               </p>
               <p className="text-foreground leading-relaxed mb-3">
-                In case you're wondering, I don't have feelings anymore, and I hope both of us end up 
-                with someone better in the future.
+                In case you're wondering, I don't have feelings anymore, and I
+                hope both of us end up with someone better in the future.
               </p>
               <p className="text-foreground leading-relaxed mb-3">
-                I wish you all the best despite everything, whether we talked or didn't...
+                I wish you all the best despite everything, whether we talked or
+                didn't...
               </p>
               <p className="text-secondary font-semibold text-lg mt-4">
                 Stay cool, stay safe, and stay happy. ✨
@@ -299,6 +312,7 @@ Try 'clear' to start fresh, or just keep exploring! 🚀`,
       };
 
     default:
+      trackUnknownCommand(mainCommand);
       return {
         type: "error",
         content: `Command not found: ${mainCommand}

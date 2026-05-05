@@ -9,6 +9,10 @@ import {
   trackSessionStart,
   trackSessionEnd,
   trackTimeOnPage,
+  trackQuickButtonClick,
+  trackScrollDepth,
+  trackCommandMilestone,
+  trackUnknownCommand,
 } from "@/lib/analytics";
 
 export interface OutputLine {
@@ -28,6 +32,9 @@ export const Terminal = ({ theme, onThemeChange }: TerminalProps) => {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const outputEndRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const commandCountRef = useRef(0);
+  const scrollMilestonesRef = useRef(new Set<number>());
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -139,6 +146,18 @@ Type 'help' to see available commands.`,
     // Track command execution
     trackCommand(trimmedInput);
 
+    // Track unknown / error commands
+    if (result.type === "error") {
+      trackUnknownCommand(trimmedInput);
+    }
+
+    // Track command count milestones
+    commandCountRef.current += 1;
+    const milestones = [5, 10, 25, 50, 100];
+    if (milestones.includes(commandCountRef.current)) {
+      trackCommandMilestone(commandCountRef.current);
+    }
+
     result.action?.();
   };
 
@@ -163,7 +182,22 @@ Type 'help' to see available commands.`,
           </div>
 
           {/* Terminal Body */}
-          <div className="p-4 md:p-6 min-h-[70vh] max-h-[80vh] overflow-y-auto">
+          <div
+            ref={scrollContainerRef}
+            className="p-4 md:p-6 min-h-[70vh] max-h-[80vh] overflow-y-auto"
+            onScroll={(e) => {
+              const el = e.currentTarget;
+              const scrollable = el.scrollHeight - el.clientHeight;
+              if (scrollable <= 0) return;
+              const pct = Math.round((el.scrollTop / scrollable) * 100);
+              for (const m of [25, 50, 75, 100]) {
+                if (pct >= m && !scrollMilestonesRef.current.has(m)) {
+                  scrollMilestonesRef.current.add(m);
+                  trackScrollDepth(m);
+                }
+              }
+            }}
+          >
             <TerminalOutput output={output} />
             <div ref={outputEndRef} />
             <TerminalInput
@@ -188,7 +222,10 @@ Type 'help' to see available commands.`,
           ].map((cmd) => (
             <button
               key={cmd}
-              onClick={() => executeCommand(cmd)}
+              onClick={() => {
+                trackQuickButtonClick(cmd);
+                executeCommand(cmd);
+              }}
               className="px-3 py-1 text-sm bg-muted hover:bg-primary hover:text-primary-foreground transition-colors rounded border border-border"
             >
               {cmd}

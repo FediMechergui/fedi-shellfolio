@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import {
   Mail,
@@ -10,7 +10,12 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
-import { trackContactFormSubmit, trackSocialClick } from "@/lib/analytics";
+import {
+  trackContactFormSubmit,
+  trackSocialClick,
+  trackContactFormStart,
+  trackContactFormAbandoned,
+} from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -68,6 +73,24 @@ export const ContactSection = () => {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const formStartedRef = useRef(false);
+  const submitSucceededRef = useRef(false);
+
+  // Track form abandonment when the section unmounts without a successful submit
+  useEffect(() => {
+    return () => {
+      if (formStartedRef.current && !submitSucceededRef.current) {
+        trackContactFormAbandoned();
+      }
+    };
+  }, []);
+
+  const handleFormFocus = () => {
+    if (!formStartedRef.current) {
+      formStartedRef.current = true;
+      trackContactFormStart();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,7 +106,7 @@ export const ContactSection = () => {
       // Check if EmailJS is configured
       if (!serviceId || !templateId || !publicKey) {
         console.warn(
-          "EmailJS not configured. Add your credentials to .env file."
+          "EmailJS not configured. Add your credentials to .env file.",
         );
         // Fallback to simulation for development
         setTimeout(() => {
@@ -106,11 +129,12 @@ export const ContactSection = () => {
           message: formData.message,
           to_name: "Fedi Mechergui",
         },
-        publicKey
+        publicKey,
       );
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
+      submitSucceededRef.current = true;
 
       // Track successful form submission
       trackContactFormSubmit(true);
@@ -132,7 +156,7 @@ export const ContactSection = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -179,7 +203,11 @@ export const ContactSection = () => {
           <h3 className="text-lg font-semibold text-secondary mb-3">
             Send me a message
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-3"
+            onFocus={handleFormFocus}
+          >
             <div>
               <label className="text-sm text-foreground block mb-1">Name</label>
               <input

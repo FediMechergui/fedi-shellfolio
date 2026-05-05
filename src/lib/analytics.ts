@@ -119,3 +119,86 @@ export const trackTimeOnPage = (seconds: number) => {
     value: seconds,
   });
 };
+
+// Track quick command button clicks (mobile bar, distinct from typed commands)
+export const trackQuickButtonClick = (command: string) => {
+  ReactGA.event({
+    category: "Terminal",
+    action: "Quick Button Clicked",
+    label: command,
+  });
+};
+
+// Track tab autocomplete usage
+export const trackTabAutocomplete = (partial: string, completed: string) => {
+  ReactGA.event({
+    category: "Terminal",
+    action: "Tab Autocomplete Used",
+    label: `${partial} → ${completed}`,
+  });
+};
+
+// Track unrecognized / unknown commands
+export const trackUnknownCommand = (command: string) => {
+  ReactGA.event({
+    category: "Terminal",
+    action: "Unknown Command",
+    label: command,
+  });
+};
+
+// Track section views (about, skills, projects, experience, education, contact)
+export const trackSectionView = (section: string) => {
+  ReactGA.event({
+    category: "Navigation",
+    action: "Section Viewed",
+    label: section,
+  });
+};
+
+// Track contact form first interaction
+export const trackContactFormStart = () => {
+  ReactGA.event({
+    category: "Contact",
+    action: "Form Started",
+    label: "Contact Form",
+  });
+};
+
+// Track contact form abandonment (started but never submitted)
+export const trackContactFormAbandoned = () => {
+  ReactGA.event({
+    category: "Contact",
+    action: "Form Abandoned",
+    label: "Contact Form",
+  });
+};
+
+// Track boot sequence completion
+export const trackBootComplete = () => {
+  ReactGA.event({
+    category: "Session",
+    action: "Boot Sequence Complete",
+    label: "Terminal Ready",
+  });
+};
+
+// Track scroll depth milestones inside the terminal output (25 / 50 / 75 / 100)
+export const trackScrollDepth = (depth: number) => {
+  ReactGA.event({
+    category: "Engagement",
+    action: "Scroll Depth",
+    label: `${depth}%`,
+    value: depth,
+  });
+};
+
+// Track command count milestones (5, 10, 25, 50 …)
+export const trackCommandMilestone = (count: number) => {
+  ReactGA.event({
+    category: "Engagement",
+    action: "Command Milestone",
+    label: `${count} commands`,
+    value: count,
+  });
+};

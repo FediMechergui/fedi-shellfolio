@@ -235,6 +235,42 @@ const categories: ProjectCategory[] = [
         link: "https://tunisian-payroll-landing.vercel.app",
       },
       {
+        title: "IRON - Tunisian Gym E-Commerce Prototype",
+        period: "2025",
+        tech: [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "Zustand",
+          "React Router",
+          "react-i18next",
+        ],
+        description:
+          "Frontend-only prototype for a Tunisian supplements & gym-accessories shop. Ships a polished customer storefront (FR / AR / EN with RTL support) and a French-language admin back-office, all powered by mock data persisted in localStorage. Features product catalog, cart & checkout, order management, promotions, blog, and a full admin dashboard — TND currency, 24 governorates, COD/D17/Flouci/Konnect payment options, TVA 19%.",
+        status: "live",
+        link: "https://iron-ruddy.vercel.app",
+      },
+      {
+        title: "DevClass - Developer Self-Assessment & Character Sheet",
+        period: "2025",
+        tech: [
+          "Next.js",
+          "TypeScript",
+          "MongoDB",
+          "Auth.js",
+          "Gemini AI",
+          "Recharts",
+          "Tailwind CSS",
+          "Framer Motion",
+        ],
+        description:
+          "Research-grounded developer self-assessment that turns a signed-in quiz into a durable character sheet. Scores 63 questions across nine engineering pillars, assigns one of ten developer archetypes, pulls public GitHub signals, and uses Gemini 2.5 Flash to generate a GitHub-aware profile and four-week development plan. Built with Next.js 16 App Router, MongoDB Atlas, and GitHub OAuth — designed to feel like a living developer RPG sheet.",
+        status: "live",
+        link: "https://devclass-eight.vercel.app",
+      },
+      {
         title: "BeyGO - Tunisian Beylical History AR Explorer",
         period: "2025",
         tech: [

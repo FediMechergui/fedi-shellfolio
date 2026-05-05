@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { trackTabAutocomplete, trackCommandHistory } from "@/lib/analytics";
 
 interface TerminalInputProps {
   onExecute: (command: string) => void;
@@ -32,6 +33,7 @@ export const TerminalInput = ({
             : Math.max(0, historyIndex - 1);
         onHistoryIndexChange(newIndex);
         setInput(commandHistory[newIndex]);
+        trackCommandHistory("up");
       }
     }
 
@@ -43,6 +45,7 @@ export const TerminalInput = ({
           historyIndex < commandHistory.length - 1 ? historyIndex + 1 : -1;
         onHistoryIndexChange(newIndex);
         setInput(newIndex === -1 ? "" : commandHistory[newIndex]);
+        trackCommandHistory("down");
       }
     }
 
@@ -73,9 +76,10 @@ export const TerminalInput = ({
         "coffee",
       ];
       const matches = commands.filter((cmd) =>
-        cmd.startsWith(input.toLowerCase())
+        cmd.startsWith(input.toLowerCase()),
       );
       if (matches.length === 1) {
+        trackTabAutocomplete(input, matches[0]);
         setInput(matches[0]);
       }
     }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { trackBootComplete } from "@/lib/analytics";
 
 const bootMessages = [
   "Initializing system...",
@@ -22,6 +23,7 @@ export const BootSequence = () => {
       return () => clearTimeout(timer);
     } else {
       setAsciiArt(true);
+      trackBootComplete();
     }
   }, [currentLine]);
 
@@ -44,7 +46,7 @@ export const BootSequence = () => {
         {asciiArt && (
           <div className="text-primary font-mono text-xs md:text-sm leading-tight animate-fade-in">
             <pre className="whitespace-pre overflow-x-auto text-glow">
-{`
+              {`
 ███████╗███████╗██████╗ ██╗    ███╗   ███╗███████╗ ██████╗██╗  ██╗███████╗██████╗  ██████╗ ██╗   ██╗██╗
 ██╔════╝██╔════╝██╔══██╗██║    ████╗ ████║██╔════╝██╔════╝██║  ██║██╔════╝██╔══██╗██╔════╝ ██║   ██║██║
 █████╗  █████╗  ██║  ██║██║    ██╔████╔██║█████╗  ██║     ███████║█████╗  ██████╔╝██║  ███╗██║   ██║██║
