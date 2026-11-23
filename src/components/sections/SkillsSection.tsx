@@ -15,6 +15,8 @@ const skillCategories: SkillCategory[] = [
       "JavaScript",
       "TypeScript",
       "React",
+      "Next.js",
+      "Prisma",
       "Node.js",
       "Express",
       "HTML5",
@@ -98,6 +100,8 @@ const skillCategories: SkillCategory[] = [
       "HuggingFace",
       "Qiskit",
       "AI APIs",
+      "MediaPipe",
+      "MATLAB",
     ],
   },
   {
@@ -120,6 +124,7 @@ const skillCategories: SkillCategory[] = [
       "Three.js",
       "CesiumJS",
       "MapLibre GL",
+      "PixiJS",
     ],
   },
   {
@@ -127,6 +132,7 @@ const skillCategories: SkillCategory[] = [
     icon: <Smartphone className="w-5 h-5 text-primary" />,
     skills: [
       "React Native",
+      "Capacitor",
       "Expo",
       "Flutter",
       "Android Studio",
@@ -166,6 +172,7 @@ export const SkillsSection = () => {
       {skillCategories.map((category, index) => (
         <div key={index} className="border border-border rounded">
           <button
+            aria-expanded={expandedCategories.includes(index)}
             onClick={() => toggleCategory(index)}
             className="w-full flex items-center gap-2 p-3 hover:bg-muted transition-colors text-left"
           >

@@ -1,10 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import emailjs from "@emailjs/browser";
 import {
   Mail,
   Github,
   Linkedin,
-  MessageSquare,
   Phone,
   Send,
   Instagram,
@@ -43,12 +42,6 @@ const socialLinks = [
     username: "+216 20077179",
   },
   {
-    name: "Discord",
-    icon: <MessageSquare className="w-5 h-5" />,
-    link: "#",
-    username: "fedimechergui",
-  },
-  {
     name: "Instagram",
     icon: <Instagram className="w-5 h-5" />,
     link: "https://instagram.com/fedimechergui7",
@@ -63,6 +56,7 @@ const socialLinks = [
 ];
 
 export const ContactSection = () => {
+  const id = useId();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -105,16 +99,8 @@ export const ContactSection = () => {
 
       // Check if EmailJS is configured
       if (!serviceId || !templateId || !publicKey) {
-        console.warn(
-          "EmailJS not configured. Add your credentials to .env file.",
-        );
-        // Fallback to simulation for development
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setSubmitStatus("success");
-          setFormData({ name: "", email: "", subject: "", message: "" });
-          setTimeout(() => setSubmitStatus("idle"), 3000);
-        }, 1500);
+        setSubmitStatus("error");
+        trackContactFormSubmit(false);
         return;
       }
 
@@ -209,9 +195,10 @@ export const ContactSection = () => {
             onFocus={handleFormFocus}
           >
             <div>
-              <label className="text-sm text-foreground block mb-1">Name</label>
+              <label htmlFor={`${id}-name`} className="text-sm text-foreground block mb-1">Name</label>
               <input
                 type="text"
+                id={`${id}-name`}
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -222,11 +209,12 @@ export const ContactSection = () => {
             </div>
 
             <div>
-              <label className="text-sm text-foreground block mb-1">
+              <label htmlFor={`${id}-email`} className="text-sm text-foreground block mb-1">
                 Email
               </label>
               <input
                 type="email"
+                id={`${id}-email`}
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -237,11 +225,12 @@ export const ContactSection = () => {
             </div>
 
             <div>
-              <label className="text-sm text-foreground block mb-1">
+              <label htmlFor={`${id}-subject`} className="text-sm text-foreground block mb-1">
                 Subject
               </label>
               <input
                 type="text"
+                id={`${id}-subject`}
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -252,10 +241,11 @@ export const ContactSection = () => {
             </div>
 
             <div>
-              <label className="text-sm text-foreground block mb-1">
+              <label htmlFor={`${id}-message`} className="text-sm text-foreground block mb-1">
                 Message
               </label>
               <textarea
+                id={`${id}-message`}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -282,15 +272,16 @@ export const ContactSection = () => {
             </button>
 
             {submitStatus === "success" && (
-              <div className="p-3 bg-primary/10 border border-primary rounded text-sm text-primary animate-fade-in">
+              <div role="status" className="p-3 bg-primary/10 border border-primary rounded text-sm text-primary animate-fade-in">
                 ✅ Message sent successfully! I'll get back to you soon.
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="p-3 bg-red-500/10 border border-red-500 rounded text-sm text-red-500 animate-fade-in">
-                ❌ Failed to send message. Please try again or contact me
-                directly via email.
+              <div role="alert" className="p-3 bg-red-500/10 border border-red-500 rounded text-sm text-red-500 animate-fade-in">
+                Your message has not been sent. Your text is still here. Please{" "}
+                <a className="underline" href={`mailto:fedimechergui03@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name} <${formData.email}>`)}`}>open it in your email app</a>
+                {" "}and send it directly.
               </div>
             )}
           </form>

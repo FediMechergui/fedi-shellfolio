@@ -50,24 +50,13 @@ Organized into categorized skill cards:
 Each skill is displayed with relevant icons and organized into expandable categories.
 
 ### 🚀 Projects Section
-Showcase of featured projects with:
-- **Expandable Project Cards**: Click to view detailed information
-- **Project Status Indicators**: 
-  - 🟢 Live - Currently running and accessible
-  - 🔒 Private - Confidential/proprietary projects
-  - ✅ Completed - Finished projects
-- **Technology Stack Tags**: Visual tags for each technology used
-- **Project Details**: Description, role, collaboration info, and tech stack
-- **Live Demo Links**: Direct links to live projects and GitHub repositories
-- **Tech-Specific Icons**: Automatic icon assignment based on technology
+The November 2026 catalogue covers all 48 public repositories, with a curated featured view and a searchable full list. Type `projects netforge` or search by name, purpose or technology in the project panel.
 
-Featured projects include:
-- Modern web applications (React, Next.js)
-- AI-powered platforms (Smart Firewall, SmartHire)
-- Mobile applications (Flutter, React Native)
-- Backend infrastructure (Microservices, CI/CD)
-- Security & encryption projects
-- Full-stack MERN applications
+- Keyboard-accessible expandable cards with source and available demo links.
+- Scope and maturity descriptions distinguish prototypes, experiments, libraries and applications.
+- Recent featured work includes Zenlo, NetForge, MLibrary, Mémora, THE VAULT, FitCoach, GeoVista, Dahsha, DevClass and Qutrob.
+- Client experience stays separate from the public source catalogue.
+- Catalogue data lives in `src/data/projects.json`; verify repository README files and visibility before adding or revising entries.
 
 ### 💼 Experience Section
 Professional work history featuring:
@@ -100,7 +89,6 @@ Interactive contact form with:
   - LinkedIn
   - Email
   - WhatsApp
-  - Discord
   - Instagram
   - Twitter
 - **Availability Status**: Freelance and collaboration availability notice
@@ -322,7 +310,7 @@ netlify deploy --prod
 
 1. **About Section**: Edit `src/components/sections/AboutSection.tsx`
 2. **Skills**: Modify skill arrays in `src/components/sections/SkillsSection.tsx`
-3. **Projects**: Update project list in `src/components/sections/ProjectsSection.tsx`
+3. **Projects**: Update verified catalogue data in `src/data/projects.json`; presentation lives in `src/components/sections/ProjectsSection.tsx`.
 4. **Experience**: Edit work history in `src/components/sections/ExperienceSection.tsx`
 5. **Education**: Modify education data in `src/components/sections/EducationSection.tsx`
 6. **Contact Links**: Update social links in `src/components/sections/ContactSection.tsx`
@@ -383,3 +371,11 @@ If you like this project, please give it a ⭐ on GitHub!
 ---
 
 **Built with ❤️ by Fedi Mechergui**
+
+## Contact delivery behavior
+
+The contact form requires the three documented EmailJS environment variables. If they are missing, or delivery fails, the form preserves the visitor's message and offers a prefilled email link. It never reports successful delivery without a successful EmailJS response.
+
+## Validation
+
+Run `npm ci`, `npm run build`, `npm run lint` and `npx tsc --noEmit -p tsconfig.app.json`. The existing shared shadcn UI components produce seven non-blocking Fast Refresh warnings.
