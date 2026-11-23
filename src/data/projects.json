@@ -1,0 +1,803 @@
+[
+  {
+    "name": "zenlo",
+    "title": "Zenlo · Car-rental operations",
+    "description": "Car-rental operations for Tunisian agencies: fleet, reservations, inspections, documents, payments and multi-company access. Pilot implementation; fiscal qualification and some integrations remain open.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vinext",
+      "Cloudflare D1",
+      "R2"
+    ],
+    "updated": "2026-11-16",
+    "url": "https://github.com/FediMechergui/zenlo",
+    "website": null,
+    "featured": true,
+    "status": "Pilot / functional implementation"
+  },
+  {
+    "name": "the-vault",
+    "title": "THE VAULT · Local biometric demo",
+    "description": "Local biometric demonstration combining face tracking, a gesture sequence and an air-drawn signature.",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Python",
+      "MediaPipe",
+      "MATLAB"
+    ],
+    "updated": "2026-11-15",
+    "url": "https://github.com/FediMechergui/the-vault",
+    "website": null,
+    "featured": true,
+    "status": "Demonstration"
+  },
+  {
+    "name": "MLibrary",
+    "title": "MLibrary · Multilingual reading",
+    "description": "Multilingual book discovery and offline reading with PDF/EPUB import, annotations, OCR and quote cards.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Capacitor",
+      "Netlify Functions",
+      "Tesseract.js"
+    ],
+    "updated": "2026-11-23",
+    "url": "https://github.com/FediMechergui/MLibrary",
+    "website": "https://mlibrary-fedimechergui.netlify.app",
+    "featured": true,
+    "status": "Web and Android application"
+  },
+  {
+    "name": "dahsha",
+    "title": "Dahsha · Documentary discovery",
+    "description": "Arabic and English documentary discovery with topics, series, local watch progress and Android delivery.",
+    "tech": [
+      "React",
+      "Vite",
+      "Node.js",
+      "Capacitor",
+      "Netlify Functions"
+    ],
+    "updated": "2026-11-16",
+    "url": "https://github.com/FediMechergui/dahsha",
+    "website": "https://dahsha.netlify.app",
+    "featured": true,
+    "status": "Web and Android application"
+  },
+  {
+    "name": "memorycardsrevision",
+    "title": "Mémora · Revision & study",
+    "description": "French revision app for S1 immersive realities and AI courses, with flashcards, quizzes, exam practice, offline progress and multiplayer study rooms.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Capacitor",
+      "Netlify Functions",
+      "Netlify Blobs"
+    ],
+    "updated": "2026-11-17",
+    "url": "https://github.com/FediMechergui/memorycardsrevision",
+    "website": null,
+    "featured": true,
+    "status": "Web and Android application"
+  },
+  {
+    "name": "flixer",
+    "title": "flixer",
+    "description": "Movie and television catalogue with provider discovery, playback choices and an Android interface.",
+    "tech": [
+      "React",
+      "Node.js",
+      "Capacitor",
+      "Netlify Functions"
+    ],
+    "updated": "2026-11-21",
+    "url": "https://github.com/FediMechergui/flixer",
+    "website": null,
+    "featured": false,
+    "status": "Android application"
+  },
+  {
+    "name": "sportswave-2",
+    "title": "sportswave-2",
+    "description": "Native Android sports discovery, calendars, scores and internal playback; includes a separate Windows preview.",
+    "tech": [
+      "Kotlin",
+      "Android",
+      "Media3"
+    ],
+    "updated": "2026-10-30",
+    "url": "https://github.com/FediMechergui/sportswave-2",
+    "website": null,
+    "featured": false,
+    "status": "Android application and desktop preview"
+  },
+  {
+    "name": "mood-map-cinema_2",
+    "title": "mood-map-cinema_2",
+    "description": "Alternate mood-based cinema discovery interface.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "updated": "2025-12-15",
+    "url": "https://github.com/FediMechergui/mood-map-cinema_2",
+    "website": "https://mood-map-cinema-2.netlify.app",
+    "featured": false,
+    "status": "Frontend prototype"
+  },
+  {
+    "name": "hoteldemo",
+    "title": "hoteldemo",
+    "description": "Hotel and travel booking interface demonstration.",
+    "tech": [
+      "React",
+      "JavaScript",
+      "Create React App"
+    ],
+    "updated": "2026-03-30",
+    "url": "https://github.com/FediMechergui/hoteldemo",
+    "website": "https://hoteldemo-fm.netlify.app",
+    "featured": false,
+    "status": "Frontend demo"
+  },
+  {
+    "name": "FediMechergui",
+    "title": "FediMechergui",
+    "description": "GitHub profile README and presentation assets.",
+    "tech": [
+      "Markdown",
+      "HTML"
+    ],
+    "updated": "2026-11-23",
+    "url": "https://github.com/FediMechergui/FediMechergui",
+    "website": "https://github.com/FediMechergui",
+    "featured": false,
+    "status": "Profile repository"
+  },
+  {
+    "name": "tunisian_payroll_hub",
+    "title": "tunisian_payroll_hub",
+    "description": "Payroll and HR application with employee records, payroll periods, leave, documents and reporting. Regulatory compliance requires independent qualification.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "PDFKit"
+    ],
+    "updated": "2026-10-29",
+    "url": "https://github.com/FediMechergui/tunisian_payroll_hub",
+    "website": "https://tunisian-payroll-landing.netlify.app",
+    "featured": false,
+    "status": "Full-stack implementation"
+  },
+  {
+    "name": "IRON",
+    "title": "IRON",
+    "description": "Multilingual supplements storefront and admin dashboard with mock local data.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand"
+    ],
+    "updated": "2026-05-03",
+    "url": "https://github.com/FediMechergui/IRON",
+    "website": "https://iron-fm.netlify.app",
+    "featured": false,
+    "status": "Frontend-only prototype"
+  },
+  {
+    "name": "netforge",
+    "title": "NetForge · Network simulation",
+    "description": "Deterministic browser network simulator with packet inspection, network courses and self-grading labs. The documented curriculum covers three CCNA courses and 56 labs.",
+    "tech": [
+      "TypeScript",
+      "React",
+      "PixiJS",
+      "xterm.js",
+      "Web Workers"
+    ],
+    "updated": "2026-10-18",
+    "url": "https://github.com/FediMechergui/netforge",
+    "website": "https://net-fm.netlify.app",
+    "featured": true,
+    "status": "Educational simulator"
+  },
+  {
+    "name": "Geovista",
+    "title": "GeoVista · 2D/3D mapping",
+    "description": "Interactive 2D/3D geographic visualization with terrain, buildings, maps and open-data analysis tools.",
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Three.js",
+      "CesiumJS",
+      "MapLibre GL"
+    ],
+    "updated": "2026-09-14",
+    "url": "https://github.com/FediMechergui/Geovista",
+    "website": "https://geovista-fm.netlify.app",
+    "featured": true,
+    "status": "Visualization application"
+  },
+  {
+    "name": "petshop-central-hub",
+    "title": "petshop-central-hub",
+    "description": "Pet-shop management interface covering products, stock, sales, clients, purchases and PDF invoices.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand",
+      "React PDF"
+    ],
+    "updated": "2026-01-26",
+    "url": "https://github.com/FediMechergui/petshop-central-hub",
+    "website": "https://dahdiha-petshop-erp.netlify.app",
+    "featured": false,
+    "status": "Frontend prototype with mock data"
+  },
+  {
+    "name": "mood-map-cinema",
+    "title": "mood-map-cinema",
+    "description": "Mood-based film discovery interface with themed environments.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "updated": "2025-12-15",
+    "url": "https://github.com/FediMechergui/mood-map-cinema",
+    "website": "https://mood-map-cinema.netlify.app",
+    "featured": false,
+    "status": "Frontend prototype"
+  },
+  {
+    "name": "mood-metal-mindscape",
+    "title": "mood-metal-mindscape",
+    "description": "Music-discovery interface with mood and weather suggestions, music search and Spotify integration components.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "updated": "2025-12-15",
+    "url": "https://github.com/FediMechergui/mood-metal-mindscape",
+    "website": "https://mood-mindscape-fm.netlify.app",
+    "featured": false,
+    "status": "Frontend prototype"
+  },
+  {
+    "name": "fwa-launchpad",
+    "title": "fwa-launchpad",
+    "description": "Service-business landing site with bilingual content, service packages and contact forms.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "updated": "2025-09-11",
+    "url": "https://github.com/FediMechergui/fwa-launchpad",
+    "website": "https://fwa-launchpad.netlify.app",
+    "featured": false,
+    "status": "Website frontend"
+  },
+  {
+    "name": "fondation-bien-etre",
+    "title": "fondation-bien-etre",
+    "description": "Wellness-center website presenting services, pricing, training and EmailJS contact integration.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "EmailJS"
+    ],
+    "updated": "2025-09-28",
+    "url": "https://github.com/FediMechergui/fondation-bien-etre",
+    "website": "https://fondation-bien-etre.netlify.app",
+    "featured": false,
+    "status": "Website implementation"
+  },
+  {
+    "name": "Omnilink-Website",
+    "title": "Omnilink-Website",
+    "description": "Company presentation website with services, contact and feedback pages.",
+    "tech": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Firebase"
+    ],
+    "updated": "2024-07-10",
+    "url": "https://github.com/FediMechergui/Omnilink-Website",
+    "website": "https://omnilink-website.netlify.app",
+    "featured": false,
+    "status": "Website implementation"
+  },
+  {
+    "name": "fedi-shellfolio",
+    "title": "fedi-shellfolio",
+    "description": "Interactive terminal-style portfolio and project catalogue.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "updated": "2026-05-06",
+    "url": "https://github.com/FediMechergui/fedi-shellfolio",
+    "website": "https://fedi-shellfolio.netlify.app",
+    "featured": false,
+    "status": "Portfolio website"
+  },
+  {
+    "name": "fedi-mechergui-site",
+    "title": "fedi-mechergui-site",
+    "description": "Software studio and freelance services website with project showcases and contact information.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Motion"
+    ],
+    "updated": "2026-09-07",
+    "url": "https://github.com/FediMechergui/fedi-mechergui-site",
+    "website": "https://workwebsite-fm.netlify.app",
+    "featured": false,
+    "status": "Portfolio website"
+  },
+  {
+    "name": "comixcenter",
+    "title": "comixcenter",
+    "description": "Comics discovery, reading guides and imported-comics reader with web and Android interfaces.",
+    "tech": [
+      "FastAPI",
+      "Python",
+      "SQLite",
+      "Next.js",
+      "Capacitor"
+    ],
+    "updated": "2026-10-19",
+    "url": "https://github.com/FediMechergui/comixcenter",
+    "website": "https://comixcenter-gateway.vercel.app",
+    "featured": false,
+    "status": "Preview 0.4.1"
+  },
+  {
+    "name": "nodejs_backend",
+    "title": "nodejs_backend",
+    "description": "THEA finance backend with enterprise access, invoices, OCR orchestration, audit records and asynchronous jobs.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "Prisma",
+      "MySQL",
+      "Redis",
+      "RabbitMQ",
+      "MinIO"
+    ],
+    "updated": "2025-10-11",
+    "url": "https://github.com/FediMechergui/nodejs_backend",
+    "website": null,
+    "featured": false,
+    "status": "Backend implementation"
+  },
+  {
+    "name": "THEA",
+    "title": "THEA · Finance backend",
+    "description": "Finance platform integrating a Node backend, OCR service and RAG assistance.",
+    "tech": [
+      "Node.js",
+      "FastAPI",
+      "Prisma",
+      "MySQL",
+      "Redis",
+      "RabbitMQ",
+      "MinIO"
+    ],
+    "updated": "2025-10-15",
+    "url": "https://github.com/FediMechergui/THEA",
+    "website": null,
+    "featured": true,
+    "status": "Multi-service implementation"
+  },
+  {
+    "name": "quantum_bank",
+    "title": "quantum_bank",
+    "description": "Experimental hybrid classical/quantum banking and fraud-analysis project. A research demonstration, without a verified quantum-advantage claim.",
+    "tech": [
+      "Python",
+      "Flask",
+      "React",
+      "Qiskit"
+    ],
+    "updated": "2025-11-18",
+    "url": "https://github.com/FediMechergui/quantum_bank",
+    "website": null,
+    "featured": false,
+    "status": "Research/demo implementation"
+  },
+  {
+    "name": "devops-pipelines",
+    "title": "devops-pipelines",
+    "description": "Small Node.js example for exercising CI pipelines and tests.",
+    "tech": [
+      "JavaScript",
+      "Node.js",
+      "GitHub Actions"
+    ],
+    "updated": "2025-12-03",
+    "url": "https://github.com/FediMechergui/devops-pipelines",
+    "website": null,
+    "featured": false,
+    "status": "Learning/demo repository"
+  },
+  {
+    "name": "take-home-assessment-solved",
+    "title": "take-home-assessment-solved",
+    "description": "Healthcare data-management assessment using mock API data and a React client.",
+    "tech": [
+      "React",
+      "Node.js",
+      "Express"
+    ],
+    "updated": "2025-12-04",
+    "url": "https://github.com/FediMechergui/take-home-assessment-solved",
+    "website": null,
+    "featured": false,
+    "status": "Take-home assessment"
+  },
+  {
+    "name": "kubernetes-demo",
+    "title": "kubernetes-demo",
+    "description": "Express sample application packaged for Docker and Kubernetes deployment.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "Docker",
+      "Kubernetes"
+    ],
+    "updated": "2025-12-07",
+    "url": "https://github.com/FediMechergui/kubernetes-demo",
+    "website": null,
+    "featured": false,
+    "status": "Deployment demonstration"
+  },
+  {
+    "name": "aquisitions",
+    "title": "aquisitions",
+    "description": "Authentication API with validation, database persistence and security middleware.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "Drizzle ORM",
+      "Neon PostgreSQL",
+      "JWT",
+      "Zod",
+      "Arcjet"
+    ],
+    "updated": "2025-12-09",
+    "url": "https://github.com/FediMechergui/aquisitions",
+    "website": null,
+    "featured": false,
+    "status": "Backend learning/implementation repository"
+  },
+  {
+    "name": "Madrasti",
+    "title": "Madrasti",
+    "description": "Empty public repository; no source or documentation available for audit.",
+    "tech": [
+      "Not established"
+    ],
+    "updated": "2026-01-14",
+    "url": "https://github.com/FediMechergui/Madrasti",
+    "website": null,
+    "featured": false,
+    "status": "Empty repository"
+  },
+  {
+    "name": "rag-immobilier",
+    "title": "Immobilier RAG · Document Q&A",
+    "description": "Document-question-answering pipeline for real-estate PDFs with retrieval and cited responses.",
+    "tech": [
+      "React",
+      "FastAPI",
+      "Python",
+      "Ollama",
+      "ChromaDB",
+      "PostgreSQL",
+      "pgvector"
+    ],
+    "updated": "2026-02-24",
+    "url": "https://github.com/FediMechergui/rag-immobilier",
+    "website": null,
+    "featured": true,
+    "status": "RAG implementation/demo"
+  },
+  {
+    "name": "SkillVault",
+    "title": "SkillVault",
+    "description": "Employee skills assessment and training-path recommendation platform built from services.",
+    "tech": [
+      "Angular",
+      "Java",
+      "Spring Boot",
+      "FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "RabbitMQ"
+    ],
+    "updated": "2026-02-09",
+    "url": "https://github.com/FediMechergui/SkillVault",
+    "website": null,
+    "featured": false,
+    "status": "Implementation/demo"
+  },
+  {
+    "name": "BeyGO",
+    "title": "BeyGO",
+    "description": "Mobile museum exploration and history-learning project with location, puzzles and AR-oriented experiences.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "updated": "2026-03-06",
+    "url": "https://github.com/FediMechergui/BeyGO",
+    "website": null,
+    "featured": false,
+    "status": "Application prototype"
+  },
+  {
+    "name": "devclass",
+    "title": "DevClass · Developer self-assessment",
+    "description": "Developer self-assessment with GitHub sign-in, an RPG-style profile and AI-generated development notes.",
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Auth.js",
+      "MongoDB",
+      "Gemini"
+    ],
+    "updated": "2026-05-04",
+    "url": "https://github.com/FediMechergui/devclass",
+    "website": "https://devclass-eight.vercel.app",
+    "featured": true,
+    "status": "Web application"
+  },
+  {
+    "name": "Qutrob",
+    "title": "Qutrob · Arabic roots game",
+    "description": "Arabic vocabulary game centered on triliteral roots and vowel-based word meanings.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "SQLite"
+    ],
+    "updated": "2026-08-19",
+    "url": "https://github.com/FediMechergui/Qutrob",
+    "website": null,
+    "featured": true,
+    "status": "Educational mobile application"
+  },
+  {
+    "name": "FitCoach",
+    "title": "FitCoach · Offline fitness",
+    "description": "Local-first Android fitness and nutrition app with workout tracking, coaching and personal records.",
+    "tech": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "SQLite",
+      "Drizzle ORM",
+      "Zustand"
+    ],
+    "updated": "2026-11-17",
+    "url": "https://github.com/FediMechergui/FitCoach",
+    "website": "https://expo.dev/accounts/fedimechergui/projects/fitcoach/builds/d79b87a7-f447-423e-b713-ae70cd236e84",
+    "featured": true,
+    "status": "Android application"
+  },
+  {
+    "name": "SportsWave-Android",
+    "title": "SportsWave-Android",
+    "description": "Native Android sports catalogue, provider discovery and fullscreen playback.",
+    "tech": [
+      "Kotlin",
+      "Android",
+      "Media3"
+    ],
+    "updated": "2026-10-18",
+    "url": "https://github.com/FediMechergui/SportsWave-Android",
+    "website": "https://github.com/FediMechergui/SportsWave-Android/releases/tag/v1.0.0-beta.1",
+    "featured": false,
+    "status": "Experimental application"
+  },
+  {
+    "name": "fwa-backend",
+    "title": "fwa-backend",
+    "description": "Contact-form backend that stores inquiries and forwards details through a configured WhatsApp session.",
+    "tech": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "whatsapp-web.js"
+    ],
+    "updated": "2025-09-11",
+    "url": "https://github.com/FediMechergui/fwa-backend",
+    "website": null,
+    "featured": false,
+    "status": "Backend implementation"
+  },
+  {
+    "name": "doctor-appointment-system",
+    "title": "doctor-appointment-system",
+    "description": "Appointment and patient-management application with doctor, file and prescription workflows.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MySQL"
+    ],
+    "updated": "2025-08-25",
+    "url": "https://github.com/FediMechergui/doctor-appointment-system",
+    "website": null,
+    "featured": false,
+    "status": "Full-stack implementation/demo"
+  },
+  {
+    "name": "CalendarPure",
+    "title": "CalendarPure",
+    "description": "Small web calendar implemented directly in PHP, JavaScript and CSS.",
+    "tech": [
+      "PHP",
+      "JavaScript",
+      "CSS"
+    ],
+    "updated": "2025-07-05",
+    "url": "https://github.com/FediMechergui/CalendarPure",
+    "website": null,
+    "featured": false,
+    "status": "Small application"
+  },
+  {
+    "name": "mahdi-firewall",
+    "title": "mahdi-firewall",
+    "description": "Design proposal for an ML-assisted firewall and intrusion-detection lab.",
+    "tech": [
+      "Proposed Python",
+      "Flask",
+      "scikit-learn",
+      "Scapy"
+    ],
+    "updated": "2025-07-05",
+    "url": "https://github.com/FediMechergui/mahdi-firewall",
+    "website": null,
+    "featured": false,
+    "status": "Documentation only"
+  },
+  {
+    "name": "AmalAPI",
+    "title": "AmalAPI",
+    "description": "Self-hosted image-analysis API for captions, object detection and optional OCR.",
+    "tech": [
+      "Python",
+      "Flask",
+      "Transformers",
+      "PyTorch",
+      "Tesseract"
+    ],
+    "updated": "2025-05-08",
+    "url": "https://github.com/FediMechergui/AmalAPI",
+    "website": null,
+    "featured": false,
+    "status": "Local AI demonstration/API"
+  },
+  {
+    "name": "ArtGallery",
+    "title": "ArtGallery",
+    "description": "Art gallery and storefront with artwork, exhibitions, accounts, carts and orders.",
+    "tech": [
+      "C#",
+      "ASP.NET Core MVC",
+      "SQL Server",
+      "Entity Framework",
+      "Identity"
+    ],
+    "updated": "2025-04-28",
+    "url": "https://github.com/FediMechergui/ArtGallery",
+    "website": null,
+    "featured": false,
+    "status": "Web application implementation"
+  },
+  {
+    "name": "secure-messaging",
+    "title": "secure-messaging",
+    "description": "Real-time messaging experiment with login, encryption utilities and Socket.IO.",
+    "tech": [
+      "HTML",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Socket.IO"
+    ],
+    "updated": "2025-04-19",
+    "url": "https://github.com/FediMechergui/secure-messaging",
+    "website": null,
+    "featured": false,
+    "status": "Security learning prototype"
+  },
+  {
+    "name": "prevision-formation-ia",
+    "title": "prevision-formation-ia",
+    "description": "Training-course popularity prediction and analytics dashboard with data processing and scraping modules.",
+    "tech": [
+      "Python",
+      "Flask",
+      "pandas",
+      "scikit-learn"
+    ],
+    "updated": "2025-04-16",
+    "url": "https://github.com/FediMechergui/prevision-formation-ia",
+    "website": null,
+    "featured": false,
+    "status": "ML demonstration"
+  },
+  {
+    "name": "recommandation-stage-ia",
+    "title": "recommandation-stage-ia",
+    "description": "Internship recommendation prototype matching profiles and skills with available listings.",
+    "tech": [
+      "Python",
+      "Flask",
+      "scikit-learn",
+      "Gensim"
+    ],
+    "updated": "2025-04-16",
+    "url": "https://github.com/FediMechergui/recommandation-stage-ia",
+    "website": null,
+    "featured": false,
+    "status": "ML demonstration with bundled data and saved models"
+  },
+  {
+    "name": "STEG",
+    "title": "STEG",
+    "description": "Unit-management and authentication web application using a Tunisian utility context.",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MySQL"
+    ],
+    "updated": "2025-04-15",
+    "url": "https://github.com/FediMechergui/STEG",
+    "website": null,
+    "featured": false,
+    "status": "Application implementation/demo"
+  }
+]
