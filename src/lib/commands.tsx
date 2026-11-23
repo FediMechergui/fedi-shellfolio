@@ -22,7 +22,7 @@ interface CommandResult {
 
 export const handleCommand = (input: string): CommandResult => {
   const command = input.toLowerCase().trim();
-  const args = command.split(" ");
+  const args = command.split(/\s+/);
   const mainCommand = args[0];
 
   switch (mainCommand) {
@@ -33,7 +33,7 @@ export const handleCommand = (input: string): CommandResult => {
   help       - Show this help message
   about      - Learn about me
   skills     - View my technical skills
-  projects   - See my projects
+  projects   - Browse projects (projects <search>)
   experience - View my work experience
   education  - See my education & certificates
   contact    - Get in touch
@@ -69,7 +69,7 @@ Easter eggs:
     case "projects":
       return {
         type: "output",
-        content: <ProjectsSection />,
+        content: <ProjectsSection initialQuery={args.slice(1).join(" ")} />,
         action: () => trackSectionView("projects"),
       };
 
