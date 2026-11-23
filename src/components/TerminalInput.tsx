@@ -58,8 +58,7 @@ export const TerminalInput = ({
     }
 
     // Handle tab - autocomplete (basic)
-    if (e.key === "Tab") {
-      e.preventDefault();
+    if (e.key === "Tab" && !e.shiftKey && input.trim()) {
       const commands = [
         "help",
         "about",
@@ -79,6 +78,7 @@ export const TerminalInput = ({
         cmd.startsWith(input.toLowerCase()),
       );
       if (matches.length === 1) {
+        e.preventDefault();
         trackTabAutocomplete(input, matches[0]);
         setInput(matches[0]);
       }
@@ -94,7 +94,11 @@ export const TerminalInput = ({
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="flex-1 bg-transparent border-none outline-none text-foreground font-mono"
+        aria-label="Terminal command"
+        autoComplete="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        className="min-w-0 flex-1 bg-transparent border-none outline-none text-foreground font-mono"
         placeholder="Type a command..."
         autoFocus
       />

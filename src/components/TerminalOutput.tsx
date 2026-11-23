@@ -19,7 +19,7 @@ export const TerminalOutput = ({ output }: TerminalOutputProps) => {
           }`}
         >
           {typeof line.content === "string" ? (
-            <pre className="whitespace-pre-wrap font-mono text-sm md:text-base">
+            <pre className="whitespace-pre-wrap break-words font-mono text-sm md:text-base">
               {line.content}
             </pre>
           ) : (
